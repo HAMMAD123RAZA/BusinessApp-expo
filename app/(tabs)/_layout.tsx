@@ -24,6 +24,16 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="Profile"
+        options={{
+        headerShown:false,
+          title: 'Profile',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name='people' size={22} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="explore"
         options={{
         headerShown:false,
