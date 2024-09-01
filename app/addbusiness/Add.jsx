@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react'
 import { useNavigation } from 'expo-router'
 import * as ImagePicker from 'expo-image-picker';
 import RNPickerSelect from 'react-native-picker-select';
-import {db} from '../../config/Firebase'
+import {db, storage} from '../../config/Firebase'
 import { collection, getDocs, query } from 'firebase/firestore';
 import { Colors } from '../../constants/Colors';
+import { getStorage, ref, uploadBytes } from '@firebase/storage';
 
 const Add = () => {
 
@@ -18,7 +19,6 @@ const Add = () => {
     const [email,setEmail]=useState('')
     const [contact,setcontact]=useState('')
     const [about,setabout]=useState('')
-
 
     const navigation=useNavigation()
     useEffect(()=>{
@@ -56,6 +56,16 @@ const Add = () => {
         console.log(data)
       }
 
+      const onAddNewBuss=async()=>{
+        const fileName=Date.now().toString()+'.jpg'
+        const resp=await fetch(fileName)
+        const blob=await resp.blob()
+
+        const imageRef=ref(storage,'business',fileName)
+        uploadBytes(imageRef,blob).then((snapShot)=>{
+            console.log('file uploaded')
+        })
+      }
 
   return (
     <View className='px-5 py-2 '>
@@ -85,7 +95,7 @@ const Add = () => {
     {/* btn */}
 
     <TouchableOpacity
-                onPress={()=>{}}
+                onPress={()=>onAddNewBuss()}
                 style={{
                     backgroundColor: Colors.primary ,
                     padding: 19,
@@ -98,8 +108,6 @@ const Add = () => {
             >
                 <Text style={{ color: 'white' ,fontSize:'bold'}}>Submit</Text>
             </TouchableOpacity>
-
-
     </View>
   )
 }
