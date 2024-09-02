@@ -3,13 +3,14 @@ import React from 'react'
 import { useRouter } from 'expo-router'
 
 const Menu = () => {
-       
+    const router=useRouter()
+
     const menuList=[
         {
             id:1,
             name:'Add Business',
             img:'https://cdn-icons-png.flaticon.com/512/1933/1933920.png',
-            path:'/addbusiness/Add'
+            path:'/bussiness/AddBuss'
         },
         {
             id:2,
@@ -28,9 +29,8 @@ const Menu = () => {
             path:''
         },
     ]
-    const router=useRouter()
 
-const     onhandleMenu =(item)=>{
+const onhandleMenu =(item)=>{
     router.push(item.path)
 }
     
