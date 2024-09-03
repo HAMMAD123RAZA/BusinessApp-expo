@@ -2,6 +2,7 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { Ionicons } from '@expo/vector-icons';
+import { Colors } from '@/constants/Colors';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -9,7 +10,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: 'blue',
+        tabBarActiveTintColor: Colors.triple,
         headerShown: false,
       }}>
       <Tabs.Screen
@@ -19,7 +20,7 @@ export default function TabLayout() {
           headerShown:false,
           title: 'Home',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'home' : 'home-outline'} size={22} color={ color} />
+            <Ionicons name={focused ? 'home' : 'home-outline'} size={22} color={ Colors.primary} />
           ),
         }}
       />
@@ -29,7 +30,7 @@ export default function TabLayout() {
         headerShown:false,
           title: 'Profile',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name='people' size={22} color={color} />
+            <Ionicons name='people' size={22} color={Colors.primary} />
           ),
         }}
       />
@@ -39,7 +40,7 @@ export default function TabLayout() {
         headerShown:false,
           title: 'Explore',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'code-slash' : 'code-slash-outline'} size={22} color={color} />
+            <Ionicons name={focused ? 'code-slash' : 'code-slash-outline'} size={22} color={Colors.four} />
           ),
         }}
       />

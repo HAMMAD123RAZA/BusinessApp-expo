@@ -45,6 +45,10 @@ const Reviews = ({ item }) => {
             
             <Rating
                 onFinishRating={(rating) => setRating(rating)}
+                ratingColor='#ff9d14' // Color for filled stars
+                ratingBackgroundColor='#e0e0e0' // Color for unfilled stars
+                ratingCount={5} // Number of stars
+                imageSize={40} // Size of the stars
                 style={{ paddingVertical: 10 }}
             />
 

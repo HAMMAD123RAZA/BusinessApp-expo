@@ -15,19 +15,19 @@ const About = ({ item }) => {
       id: 2,
       name: 'Map',
       icon: 'location',
-      url: 'tel:' + item.location,
+      url: 'https://:' + item.location,
     },
     {
       id: 3,
       name: 'Web',
       icon: 'globe',
-      url: 'tel:' + item.web,
+      url: 'https://:' + item.web,
     },
     {
       id: 4,
       name: 'share',
       icon: 'share',
-      url: 'tel:' + item.share,
+      url: 'sms:' + item.share,
     },
   ];
 

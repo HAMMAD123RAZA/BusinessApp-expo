@@ -2,7 +2,7 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import {collection, getDocs, query} from 'firebase/firestore'
 import { db } from '../../config/Firebase'
-import { FlatList } from 'react-native-gesture-handler'
+import { FlatList } from 'react-native'
 import { useRouter } from 'expo-router'
 
 

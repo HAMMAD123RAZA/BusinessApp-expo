@@ -3,7 +3,7 @@ import React from 'react'
 
 const UserInfo = () => {
   return (
-    <View className=' my-10 ml-28    ' >
+    <View className=' my-10     '  style={{marginLeft:120}} >
 
 <Image source={{uri:'https://a0.anyrgb.com/pngimg/1784/296/client-icon-login-avatar-user-light-service-orange-business-icons-circle.png'}}
       style={{borderRadius:112}}
