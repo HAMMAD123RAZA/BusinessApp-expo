@@ -33,15 +33,12 @@ const MyBusiness = () => {
             }
 
   return (
-    <ScrollView  >
-      <Text className='font-bold text-2xl px-9  py-2' >My Business</Text>
-      <FlatList
-        renderItem={renderItem}
-        data={bussinessList}
-          
-         showsHorizontalScrollIndicator={false} />
-    </ScrollView>
-  )
+    <FlatList
+    ListHeaderComponent={<Text className='font-bold text-2xl px-9  py-2' >My Business</Text>}
+      renderItem={renderItem}
+      data={bussinessList}
+       showsHorizontalScrollIndicator={false} />
+)
 }
 
 export default MyBusiness

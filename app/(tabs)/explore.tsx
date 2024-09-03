@@ -7,8 +7,9 @@ import ExploreBusList from '../../components/explore/ExploreBusList'
 
 const explore = () => {
   return (
+    <ScrollView>
+
     <View className='mt-12' >
-      <ScrollView>
 
       <Text className='ml-7 my-2 font-bold text-2xl ' style={{color:Colors.primary}} >Explore</Text>
       <View className='flex-row gap-3 m-4'  style={{borderWidth:2,padding:9 , borderRadius:8, borderColor:Colors.primary}}  >
@@ -20,9 +21,10 @@ const explore = () => {
 
       {/* list */}
       <ExploreBusList/>
-      </ScrollView>
 
     </View>
+    </ScrollView>
+
   )
 }
 

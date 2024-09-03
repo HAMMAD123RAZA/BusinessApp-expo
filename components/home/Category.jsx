@@ -33,7 +33,7 @@ catch (error) {
         return (
             <View className='px-5' >
                 <TouchableOpacity onPress={()=>router.push('/catList/'+item.name)} >
-            <Image source={{uri:item.img}} width={70} height={30}  />
+            <Image source={{uri:item.img}} width={90} height={80}  />
             <Text className='px-2 pt-3' >{item.name}</Text>
             </TouchableOpacity>
             </View>

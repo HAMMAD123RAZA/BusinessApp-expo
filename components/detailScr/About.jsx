@@ -15,7 +15,7 @@ const About = ({ item }) => {
       id: 2,
       name: 'Map',
       icon: 'location',
-      url: 'https://:' + item.location,
+      url: 'https://:' + item.address,
     },
     {
       id: 3,

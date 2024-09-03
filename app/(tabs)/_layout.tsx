@@ -40,7 +40,7 @@ export default function TabLayout() {
         headerShown:false,
           title: 'Explore',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'code-slash' : 'code-slash-outline'} size={22} color={Colors.four} />
+            <Ionicons name='search' size={22} color={Colors.four} />
           ),
         }}
       />
