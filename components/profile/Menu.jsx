@@ -40,7 +40,6 @@ const onhandleMenu =(item)=>{
                 <TouchableOpacity onPress={()=>onhandleMenu(item)} >
                 <Image source={{uri:item.img}} width={50} height={30} style={{borderRadius:10}} />
             <Text className='font-bold my-2 text-xl' >{item.name}</Text>
-
                 </TouchableOpacity>
             </View>
         )
