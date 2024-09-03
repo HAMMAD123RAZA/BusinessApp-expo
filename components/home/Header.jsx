@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons'
 
 const Header = () => {
   return (
-    <View className='bg-orange-400   py-10' >
+    <View className='bg-orange-400   py-10' style={{borderBottomRightRadius:27,borderBottomLeftRadius:27}} >
       <View className='flex-row gap-3' >
 
       <Image source={{uri:'https://a0.anyrgb.com/pngimg/1784/296/client-icon-login-avatar-user-light-service-orange-business-icons-circle.png'}}
