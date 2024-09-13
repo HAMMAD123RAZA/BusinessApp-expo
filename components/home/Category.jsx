@@ -9,7 +9,6 @@ import { useRouter } from 'expo-router'
 const Category = () => {
 
     const [cat, setcat] = useState([])
-
     const router=useRouter()
 
  useEffect(()=>{
@@ -41,6 +40,7 @@ catch (error) {
     }
 
   return (
+
     <View className='py-5' >
         <FlatList
         renderItem={renderItem}

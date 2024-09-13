@@ -21,7 +21,7 @@ const Reviews = ({ item }) => {
         }
 
         try {
-            const docRef = doc(db, 'businessList', item.id);
+            const docRef = doc(db, 'businessList', item?.id);
             await updateDoc(docRef, {
                 reviews: arrayUnion({
                     rating: rating,

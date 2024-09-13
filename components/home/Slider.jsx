@@ -1,16 +1,17 @@
-import { View, Text, FlatList, Image } from 'react-native'
+import { View, Text, FlatList, Image, ActivityIndicator } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import {collection, getDocs, query} from 'firebase/firestore'
 import { db } from '../../config/Firebase'
 
 const Slider = () => {
 const [slider, setslider] = useState([])
-
-    useEffect(()=>{
+  const [loading, setloading] = useState(false)
+  useEffect(()=>{
 getData()
     },[])
 
     const getData=async()=>{
+      setloading(true)
 try {
     const q=query(collection(db,'listing'))
     const qSnapShot=await getDocs(q)
@@ -21,7 +22,18 @@ try {
 catch (error) {
     console.log(error,'error in sliders')
 }
+finally{
+  setloading(false)
+}
     }
+
+    if (loading) {
+      return (
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+              <ActivityIndicator size={'large'} color='#f79a65' />
+          </View>
+      )
+  }
 
     const renderItem=({item})=>{
       return (

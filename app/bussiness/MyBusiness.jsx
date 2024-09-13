@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity, FlatList, ScrollView } from 'react-native'
+import { View, Text, Image, TouchableOpacity, FlatList, ScrollView, ActivityIndicator } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import {collection, getDocs, query} from 'firebase/firestore'
 import {db } from '../../config/Firebase'
@@ -7,12 +7,13 @@ import BussListCard from '../../components/home/BussListCard'
 const MyBusiness = () => {
 
     const [bussinessList, setbussinessList] = useState([])
-
+    const [loading, setloading] = useState(false)
     useEffect(()=>{
         getData()
             },[])
         
          const getData=async()=>{
+            setloading(true)
         try {
             const q=query(collection(db,'businessList'))
             const qSnapShot=await getDocs(q)
@@ -23,11 +24,20 @@ const MyBusiness = () => {
         catch (error) {
             console.log(error,'error in cats')
         }
+        setloading(false)
             }
             const renderItem=({item})=>{
                 return (
                     <View>
                     <BussListCard item={item} />
+                    </View>
+                )
+            }
+
+            if (loading) {
+                return (
+                    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                        <ActivityIndicator size={'large'} color='#f79a65' />
                     </View>
                 )
             }
