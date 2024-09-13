@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "bussinessApp",
-    "slug": "businessexpoapp",
+    "slug": "businessapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -47,7 +47,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "0d298452-2e14-4e76-8aa2-30c4df739ea8"
+        "projectId": "96995918-2bdd-4068-89a4-b7315f1b610b"
       }
     },
     "owner": "hammadza"
